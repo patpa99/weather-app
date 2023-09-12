@@ -1,0 +1,144 @@
+/* ---------------- To have the same Roboto font everywhere ------------------ */
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+#weatherModal_unclicked,
+#weatherModal_clicked {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+  z-index: 4;
+  transition: 0.3s;
+
+  /* To remove the possibility to highlight text */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#weatherModal_clicked {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#weatherModal_unclicked {
+  visibility: hidden;
+  transform: translateY(-100%);
+}
+
+/* ------------- Weather Modal Content ------------- */
+#weatherModalContent {
+  background-color: #1a1a1a;
+  color: white;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 30px;
+  max-width: 60%;
+  max-height: 70%;
+  overflow: hidden;
+}
+
+#weatherTitleDiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bold;
+  padding: 16px;
+}
+
+/* ------------- Weather Content Div ------------- */
+#weatherContentDiv {
+  max-height: 250px;
+  /* Enable scroll if needed */
+  overflow: auto;
+}
+
+#weatherContent {
+  width: 100%;
+  text-align: center;
+}
+
+#globalWeatherImg {
+  width: 60%;
+  height: auto;
+}
+
+#futureDevTxt {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 0px;
+}
+
+/* ------------- The Close Button ------------- */
+#closingCross {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#closingCross:hover,
+#closingCross:focus {
+  color: #b3b3b3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ------------- Scrollbar of the weather content div ------------------ */
+#weatherContentDiv::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+#weatherContentDiv::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white;
+  border-radius: 10px;
+}
+
+#weatherContentDiv::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 10px;
+}
+
+/* Media query to change weather app style when window width is less than 851px */
+@media screen and (max-width: 851px) {
+  #weatherModal_unclicked,
+  #weatherModal_clicked {
+    font-size: 16px;
+  }
+
+  #weatherTitleDiv {
+    font-size: 17px;
+  }
+
+  #weatherModalContent {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+/* Media query to change weather app style when window height is less than 525px */
+@media screen and (max-height: 525px) {
+  #weatherModal_unclicked,
+  #weatherModal_clicked {
+    font-size: 16px;
+  }
+
+  #weatherTitleDiv {
+    font-size: 17px;
+  }
+
+  #weatherModalContent {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

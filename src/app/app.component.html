@@ -1,0 +1,21 @@
+<div [id]="weatherModalId">
+  <div id="weatherModalContent">
+    <span id="closingCross" (click)="closeWeatherModal()"> &times; </span>
+    <div id="weatherTitleDiv">
+      <fa-icon [icon]="sunCloudIcon"></fa-icon> Weather
+      <fa-icon [icon]="snowIcon"></fa-icon>
+    </div>
+    <div id="weatherContentDiv">
+      <div id="weatherContent">
+        <p id="futureDevTxt">
+          Warning: This feature will be developed in the future
+        </p>
+        <img
+          id="globalWeatherImg"
+          [src]="globalWeatherImg"
+          alt="Global weather"
+        />
+      </div>
+    </div>
+  </div>
+</div>
